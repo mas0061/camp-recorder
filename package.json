@@ -4,7 +4,8 @@
   "description": "Recording my Camp life",
   "main": "index.js",
   "scripts": {
-    "bundle": "browserify -t src/index.js -o dest/bundle.js",
+    "watch": "watchify -t babelify -o dist/bundle.js src/index.jsx",
+    "bundle": "browserify -t src/index.jsx -o dist/bundle.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -28,6 +29,7 @@
     "babel-preset-es2015": "^6.9.0",
     "babel-preset-react": "^6.5.0",
     "babelify": "^7.3.0",
-    "browserify": "^13.0.1"
+    "browserify": "^13.0.1",
+    "watchify": "^3.7.0"
   }
 }
