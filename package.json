@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "watch": "watchify -t babelify -o dist/bundle.js src/index.jsx",
-    "bundle": "browserify -t src/index.jsx -o dist/bundle.js",
+    "bundle": "NODE_ENV=production browserify src/index.jsx -t babelify -o dist/bundle.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
