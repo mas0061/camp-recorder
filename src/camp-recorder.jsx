@@ -1,5 +1,9 @@
 import React from 'react';
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+import AppBar from 'material-ui/AppBar';
+
 import Item from './item.jsx';
+import CRHeader from './header.jsx'
 
 export default class CampRecorder extends React.Component {
   constructor(props) {
@@ -12,17 +16,20 @@ export default class CampRecorder extends React.Component {
 
   render() {
     let _items = [];
-    this.state.items.forEach(function(item){
-      _items.push(<Item itemName={item.name} />);
+    this.state.items.forEach(function(item, index){
+      _items.push(<Item itemName={item.name} key={`item-${index}`} />);
     });
 
     return (
-      <div>
-        <h1>キャンプ持ち物リスト</h1>
-        <ul>
-          {_items}
-        </ul>
-      </div>
+      <MuiThemeProvider>
+        <div>
+          <CRHeader />
+          <div>
+            <h2>持ち物リスト</h2>
+            {_items}
+          </div>
+        </div>
+      </MuiThemeProvider>
     );
   }
 

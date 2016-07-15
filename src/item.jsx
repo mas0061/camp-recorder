@@ -1,21 +1,14 @@
 import React from 'react';
+import Checkbox from 'material-ui/Checkbox';
 
 export default class Item extends React.Component {
   constructor(props) {
     super(props);
-
-    this.state = {
-      checked: false
-    }
-  }
-
-  _changeCheck(event) {
-    this.setState({ checked: !this.state.checked })
   }
 
   render() {
     return (
-      <li><input type="checkbox" checked={this.state.checked} onChange={this._changeCheck.bind(this)} />{this.props.itemName}</li>
+      <li><Checkbox label={this.props.itemName} /></li>
     );
   }
 
