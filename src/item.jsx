@@ -9,7 +9,7 @@ export default class Item extends React.Component {
   }
 
   _clickDelete(event) {
-    this.props.handleEvent('deleteItem', this.props.itemName);
+    this.props.handleEvent('deleteItem', this.props.itemId);
   }
 
   render() {

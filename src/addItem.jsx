@@ -14,7 +14,7 @@ export default class AddItem extends React.Component {
 
   _clickAddButton(event) {
     if (!this.state.itemName) return;
-    
+
     this.props.handleEvent('addItem', {name: this.state.itemName});
     this.setState({
       itemName: '',

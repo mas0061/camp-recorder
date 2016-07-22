@@ -3,33 +3,36 @@ import {List} from 'material-ui/List';
 
 import Item from './item.jsx';
 import AddItem from './addItem.jsx';
+import {generateId} from './generateID.jsx';
 
 export default class PackingList extends React.Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      items: [{name: 'テント'}]
+      items: []
     }
   }
 
   _handleEvent(eventName, value) {
     switch(eventName) {
       case 'addItem':
-        this.setState({items: this.state.items.concat([{name: value.name}])});
+        this.setState({items: this.state.items.concat([{id: generateId(), name: value.name}])});
         break;
       case 'deleteItem':
-        console.log(value);
+        this.setState({items: this.state.items.filter(function(x){ return x.id !== value })});
         break;
     }
   }
 
   render() {
-    let self = this;
-    let _items = [];
-    this.state.items.forEach(function(item, index){
-      _items.push(<Item itemName={item.name} key={`item-${index}`} handleEvent={self._handleEvent.bind(self)} />);
-    });
+    let _items = this.state.items.map(function(item){
+      return <Item
+              itemId={item.id}
+              itemName={item.name}
+              key={item.id}
+              handleEvent={self._handleEvent.bind(this)} />
+          }, this);
 
     return (
       <div>
