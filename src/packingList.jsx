@@ -31,7 +31,7 @@ export default class PackingList extends React.Component {
               itemId={item.id}
               itemName={item.name}
               key={item.id}
-              handleEvent={self._handleEvent.bind(this)} />
+              handleEvent={this._handleEvent.bind(this)} />
           }, this);
 
     return (

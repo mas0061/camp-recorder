@@ -22,9 +22,13 @@
   },
   "homepage": "https://github.com/mas0061/camp-recorder#readme",
   "dependencies": {
-    "material-ui": "^0.15.2",
+    "babel-preset-es2015": "^6.14.0",
+    "babel-preset-react": "^6.11.1",
+    "browserify": "^13.1.0",
+    "material-ui": "^0.15.4",
     "react": "^15.1.0",
-    "react-dom": "^15.1.0"
+    "react-dom": "^15.1.0",
+    "react-tap-event-plugin": "^1.0.0"
   },
   "devDependencies": {
     "babel-preset-es2015": "^6.9.0",
